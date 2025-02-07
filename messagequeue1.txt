@@ -1,0 +1,107 @@
+gopagopalk:~$ cd Downloads
+gopalk:~/Downloads$ cd praveen
+gopalk:~/Downloads/praveen$ vi msgqueue1.c
+gopalk:~/Downloads/praveen$ cc msgqueue1.c
+gopalk:~/Downloads/praveen$ ./a.out
+sh: 1: clean: not found
+****DIMONSTRATION OF MESSAGE QUEUE   *******************************************************
+		 Successfully Created Message QUEUE with ID: 4  
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+0x00000014 4          gopalk     0          0            0           
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 4          gopalk     600        524288     2          dest         
+0x00000000 7          gopalk     600        524288     2          dest         
+0x00000000 65553      gopalk     600        524288     2          dest         
+0x00000000 47         gopalk     600        524288     2          dest         
+0x00000000 50         gopalk     600        524288     2          dest         
+0x00000000 52         gopalk     600        524288     2          dest         
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+gopalk:~/Downloads/praveen$ ipcs
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+0x00000014 4          gopalk     0          0            0           
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 4          gopalk     600        524288     2          dest         
+0x00000000 7          gopalk     600        524288     2          dest         
+0x00000000 65553      gopalk     600        524288     2          dest         
+0x00000000 47         gopalk     600        524288     2          dest         
+0x00000000 50         gopalk     600        524288     2          dest         
+0x00000000 52         gopalk     600        524288     2          dest         
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+gopalk:~/Downloads/praveen$ ipcrm -Q 20
+gopalk:~/Downloads/praveen$ ipcs
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 4          gopalk     600        524288     2          dest         
+0x00000000 7          gopalk     600        524288     2          dest         
+0x00000000 65553      gopalk     600        524288     2          dest         
+0x00000000 47         gopalk     600        524288     2          dest         
+0x00000000 50         gopalk     600        524288     2          dest         
+0x00000000 52         gopalk     600        524288     2          dest         
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+gopalk:~/Downloads/praveen$ ./a.out
+sh: 1: clean: not found
+****DIMONSTRATION OF MESSAGE QUEUE   *******************************************************
+		 Successfully Created Message QUEUE with ID: 5  
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+0x00000014 5          gopalk     0          0            0           
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 4          gopalk     600        524288     2          dest         
+0x00000000 7          gopalk     600        524288     2          dest         
+0x00000000 65553      gopalk     600        524288     2          dest         
+0x00000000 47         gopalk     600        524288     2          dest         
+0x00000000 50         gopalk     600        524288     2          dest         
+0x00000000 52         gopalk     600        524288     2          dest         
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+gopalk:~/Downloads/praveen$ ipcrm -q 5
+gopalk:~/Downloads/praveen$ ipcs
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 4          gopalk     600        524288     2          dest         
+0x00000000 7          gopalk     600        524288     2          dest         
+0x00000000 65553      gopalk     600        524288     2          dest         
+0x00000000 47         gopalk     600        524288     2          dest         
+0x00000000 50         gopalk     600        524288     2          dest         
+0x00000000 52         gopalk     600        524288     2          dest         
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+gopalk:~/Downloads/praveen$ ipcrm /?
+ipcrm: unknown argument: /?
+Try 'ipcrm --help' for more information.
+gopalk:~/Downloads/praveen$ 
+
+   6932 pts/0    00:00:00 bash
+   7591 pts/0    00:00:00 ps
